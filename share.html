@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Viral</title>
+    <style>
+      /* Contenedor general */
+      body {
+        background: #000;
+        margin: 0;
+        padding: 0;
+      }
+      h2 {
+        color: #f4f4f4;
+      }
+      .wizard-container {
+        max-width: 450px;
+        margin: auto;
+        text-align: center;
+        font-family: sans-serif;
+        padding: 20px;
+      }
+
+      /* Tarjetas ocasiones y copies */
+      .occasion,
+      .copy-card {
+        padding: 14px 20px;
+        border-radius: 12px;
+        border: none;
+        background: #f4f4f4;
+        cursor: pointer;
+        margin: 6px;
+        font-size: 16px;
+        transition: 0.2s;
+      }
+
+      .occasion:hover,
+      .copy-card:hover {
+        background: #ffe4ec;
+      }
+
+      .occasion.selected,
+      .copy-card.selected {
+        background: #ffd6e7;
+        border: 1px solid #ff4d8d;
+      }
+
+      /* Inputs y textarea */
+      textarea,
+      input {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+      }
+
+      /* Previsualización mensaje */
+      .preview {
+        margin-top: 10px;
+        padding: 12px;
+        border: 1px dashed #aaa;
+        border-radius: 8px;
+        background: #fff0f6;
+        font-weight: bold;
+      }
+
+      /* Botones wizard */
+      #nextStep,
+      #prevStep {
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #ff4d8d;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      #nextStep:hover,
+      #prevStep:hover,
+      #shareBtn:hover {
+        background: #ff2d6d;
+      }
+      #prevStep {
+        margin-right: 10px;
+      }
+
+      /* Botones compartir */
+      #shareWhatsApp,
+      #shareCopy,
+      #shareBtn {
+        padding: 10px 16px;
+        border-radius: 8px;
+        margin: 8px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      #shareWhatsApp {
+        background: #25d366;
+        color: white;
+      }
+      #shareBtn {
+        background: #ff4d8d;
+        color: white;
+      }
+      #shareCopy {
+        background: #888;
+        color: white;
+      }
+      #shareWhatsApp:hover {
+        background: #1ebe57;
+      }
+      #shareCopy:hover {
+        background: #666;
+      }
+
+      .step {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wizard-container">
+      <!-- Paso 1: Elegir ocasión -->
+      <div class="step" id="step-occasion">
+        <h2>1️⃣ Elige la ocasión</h2>
+        <div class="occasion-container">
+          <button class="occasion" data-type="amor">❤️ Amor</button>
+          <button class="occasion" data-type="amistad">🤝 Amistad</button>
+          <button class="occasion" data-type="carino">💛 Cariño</button>
+          <button class="occasion" data-type="agradecer">🙏 Agradecer</button>
+          <button class="occasion" data-type="porque">✨ Porque sí</button>
+          <button class="occasion" data-type="personalizado">
+            🖊️ Mensaje personalizado
+          </button>
+        </div>
+      </div>
+
+      <!-- Paso 2: Elegir mensaje -->
+      <div class="step" id="step-message" style="display: none">
+        <h2>2️⃣ Elige o escribe tu mensaje</h2>
+        <div id="copyContainer"></div>
+        <textarea
+          id="customMessage"
+          placeholder="Escribe tu mensaje (máx 40 caracteres)"
+          maxlength="40"
+          style="display: none"
+        ></textarea>
+        <div id="previewMessage" class="preview"></div>
+      </div>
+
+      <!-- Paso 3: Nombre destinatario -->
+      <div class="step" id="step-name" style="display: none">
+        <h2>3️⃣ Nombre del destinatario</h2>
+        <input id="nameInput" placeholder="Ej. María" />
+      </div>
+
+      <!-- Paso 4: Nombre remitente -->
+      <div class="step" id="step-sender" style="display: none">
+        <h2>4️⃣ Tu nombre <span>*opcional</span></h2>
+        <input id="senderInput" placeholder="Ej. Juan" />
+      </div>
+
+      <!-- Paso 5: Generar link -->
+      <div class="step" id="step-generate" style="display: none">
+        <h2>5️⃣ Comparte tu mensaje</h2>
+        <div id="result"></div>
+        <button id="shareBtn">Copiar link</button>
+        <button id="shareWhatsApp">Compartir en WhatsApp</button>
+        <button id="shareCopy">Copiar link</button>
+      </div>
+
+      <!-- Botones navegación -->
+      <div style="margin-top: 15px">
+        <button id="prevStep">⬅️ Atrás</button>
+        <button id="nextStep">Siguiente ➡️</button>
+      </div>
+    </div>
+
+    <script src="/js/share.js"></script>
+  </body>
+</html>
