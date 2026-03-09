@@ -102,7 +102,9 @@ nextStepBtn.addEventListener("click",()=>{
     nextStepBtn.style.display="none";
 
     const message = customMessage.style.display==="block" ? customMessage.value.trim() : selectedCopy;
-    const url = `${window.location.origin}?name=${encodeURIComponent(nameInput.value.trim())}&msg=${encodeURIComponent(message)}&from=${encodeURIComponent(senderInput.value.trim())}`;
+
+    const baseUrl = new URL('.', window.location.href).href;
+    const url = `${baseUrl}flower.html?name=${encodeURIComponent(nameInput.value.trim())}&msg=${encodeURIComponent(message)}&from=${encodeURIComponent(senderInput.value.trim())}`;
 
     resultDiv.innerHTML = `<input value="${url}" readonly style="width:80%; margin-bottom:10px;">`;
 
