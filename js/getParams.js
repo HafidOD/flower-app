@@ -3,8 +3,11 @@ const name = paramsURL.get("name") || null;
 const msg = paramsURL.get("msg") || null;
 const from = paramsURL.get("from") || null;
 
-console.log(name);
-console.log(msg);
-console.log(from);
+const containerName = document.getElementById("name")
+const containerMsg = document.getElementById("msg")
+const containerFrom = document.getElementById("from")
 
+containerName ? containerName.textContent = name : null;
+containerMsg ? containerMsg.textContent = msg : null;
+containerFrom && from ? containerFrom.textContent = ("- " + from) : null;
 

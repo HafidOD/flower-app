@@ -10,51 +10,66 @@
   </head>
 
   <body>
-    <div></div>
-    <div class="container">
+    <header>
+      <h2 class="header text-center">PARA TI</h2>
+    </header>
+    <main>
       <div class="container">
-        <p>
-          Esta web es para poder compartir flores amarillas a personas
-          especiales
+        <div class="icon text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            >
+              <path d="M14 6a4 4 0 1 1-2-3.46" />
+              <circle cx="12" cy="6" r="2" />
+              <path
+                d="M10 6a4 4 0 0 1 8 0v2A6 6 0 0 1 6 8V6m6 8v8m0 0c-4.2 0-7-1.667-7-5c4.2 0 7 1.667 7 5m0 0c4.2 0 7-1.667 7-5c-4.2 0-7 1.667-7 5"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1 class="italic bold text-center">Hola <span id="name"></span></h1>
+        <p class="text">
+          Te envío un mundo de amor y calidez hoy. Que estas flores amarillas
+          iluminen tu alma tanto como tú iluminas la mía.
         </p>
-        <p>
-          Espero poder ayudar a quienes por alguna razón no pueden dar flores de
-          forma presenciales
-        </p>
-        <p>
-          Comparte esta web para que mas personas como yo puedan enviar flores
-          amarillas con sus seres queridos
-        </p>
-        <p>¡Gracias por visitar mi web!</p>
-        <p>Con mucho amor Hafid O</p>
+        <p id="from" class="italic bold from text-end"></p>
+        <div class="button text-center">
+          <button class="btn" id="start">
+            Abrir regalo
+            <span
+              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path
+                  fill="currentColor"
+                  d="M2 2.75A2.75 2.75 0 0 1 4.75 0c.983 0 1.873.42 2.57 1.232q.404.479.68 1.042q.275-.564.68-1.044C9.376.42 10.266 0 11.25 0a2.75 2.75 0 0 1 2.45 4h.55c.966 0 1.75.784 1.75 1.75v2c0 .698-.409 1.301-1 1.582v4.918A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V9.332C.409 9.05 0 8.448 0 7.75v-2C0 4.784.784 4 1.75 4h.55c-.192-.375-.3-.8-.3-1.25M7.25 9.5H2.5v4.75c0 .138.112.25.25.25h4.5Zm1.5 0v5h4.5a.25.25 0 0 0 .25-.25V9.5Zm0-4V8h5.5a.25.25 0 0 0 .25-.25v-2a.25.25 0 0 0-.25-.25Zm-7 0a.25.25 0 0 0-.25.25v2c0 .138.112.25.25.25h5.5V5.5zm3-4a1.25 1.25 0 0 0 0 2.5h2.309c-.233-.818-.542-1.401-.878-1.793c-.43-.502-.915-.707-1.431-.707M8.941 4h2.309a1.25 1.25 0 0 0 0-2.5c-.516 0-1 .205-1.43.707c-.337.392-.646.975-.879 1.793"
+                /></svg
+            ></span>
+          </button>
+        </div>
       </div>
+    </main>
 
-      <div>
-        <p>
-          Da click en el boton ahi podras elegir ocación, texto y dedicatoria,
-          al final del proceso podras compartir o copiar el link
-        </p>
-      </div>
-      <img src="img/screen.png" width="550" alt="" />
-      <div class="button">
-        <button class="btn">
-          <a href="share.html" style="color: #fff">Comenzar</a>
-        </button>
-      </div>
-    </div>
-
-    <div>
+    <footer>
       <p>
-        Agradezco a las personas que me apoyaron con el proyecto en especial a
+        Hecho con amor &#10084;&#65039; por
         <a
-          href="https://github.com/DaniCodex"
+          href="https://www.instagram.com/hafid18od"
           target="_blank"
-          rel="noopener noreferrer"
-          >DaniCodex</a
+          class="italic bold"
+          >Hafid</a
         >
-        por compartir el proyecto inicial el cual me inspiró a crear esta web.
-        por favor, visita su perfil en GitHub.
       </p>
-    </div>
+    </footer>
+
+    <script>
+      document.getElementById("start").addEventListener("click", () => {
+        window.location.href = "flower.html" + window.location.search;
+      });
+    </script>
+    <script src="js/getParams.js"></script>
   </body>
 </html>

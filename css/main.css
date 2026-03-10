@@ -50,28 +50,33 @@ a.share {
     gap: 10px;
     text-decoration: none;
 }
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.5);
+#sound {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #064600;
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+#sound svg {
+  width: 40px;
+  height: 30px;
+  transition: color 0.3s ease;
+}
+#sound:hover {
+  background-color: #159faa;
+  cursor: pointer;
 }
 
-.modal-content{
-  background:white;
-  padding:20px;
-  margin:10% auto;
-  width:300px;
-  border-radius:10px;
-  text-align:center;
-}
-
-#lyrics {
+.lyrics {
   font-size: 28px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
   position: absolute;
-  margin-bottom: 20%;
+  top: 10%;
   z-index: 1;
   font-weight: bold;
   letter-spacing: 4px;

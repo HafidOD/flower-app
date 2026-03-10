@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap');
 *,
 *::after,
 *::before {
@@ -11,6 +12,7 @@
   --dark-color: #000;
   --rose: #ff4d8d;
   --dark-rose: #ff2d6d;
+  --yelow: #e6cc4c;
 }
 body{
     color: azure;
@@ -19,16 +21,65 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: black;
+    font-family: plus-jakarta-sans, sans-serif;
+    min-height: 100%;
+}
+header{
+    letter-spacing: 0.2em;
+    font-size: .5em;
+    color: var(--yelow);
+    text-align: center;
+}
+main{
+    min-height: 60%;
 }
 a{
     text-decoration: none;
-    color: #ff4d8d;;
+    color: var(--yelow);
+    opacity: 0.3;
+}
+p.text{
+    text-align: center;
+    margin: 20px 10px 20px 10px;
+    line-height: 1.625;
+}
+footer{
+    font-size: 0.7em;
+    color: #94a3b857;
+}
+.italic {
+    font-style: italic;
+}
+.bold {
+    font-weight: bold;
+}
+.from {
+    font-size: 0.8em;
+    margin-bottom: 25px;
+}
+.text-center {
+    text-align: center;
+}
+.text-end {
+    text-align: end;
+    margin-right: 80px;
+}
+.icon {
+    width: 120px;
+    height: 120px;
+    background-color: var(--yelow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0 auto 25px auto;
 }
 .btn, .btn a{
     padding: 10px 20px;
-    background: #ff4d8d;
+    background: var(--yelow);
     color: white;
     border: none;
     cursor: pointer;
@@ -39,29 +90,28 @@ a{
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-.btn a:focus{
+.btn svg{
+    width: 15px;
+    height: 15px;
+    margin-left: 6px;
+}
+
+.btn:hover{
     background-color: var(--dark-rose);
-}
-
-.description{
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.button a{
-    text-decoration: none;
-    font-size: 1rem;
-    color: #111;
 }
 
 .container{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
+    height: 100%;
+    width: 400px;
 }
+
 
 @media screen and (max-width:574px){
     .description{
