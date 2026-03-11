@@ -12,11 +12,15 @@
   --dark-rose: #ff2d6d;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   background-color: var(--dark-color);
   overflow: hidden;
   perspective: 1000px;

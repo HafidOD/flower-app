@@ -38,6 +38,10 @@ main{
 a{
     text-decoration: none;
 }
+.img {
+    width: 20em;
+    height: auto;
+}
 a.social{
     color: var(--yelow);
     opacity: 0.3;
