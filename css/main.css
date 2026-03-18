@@ -59,6 +59,8 @@ body {
   background-color: var(--dark-color);
   overflow: hidden;
   perspective: 1000px;
+  color: white;
+  font-family: Monserrat, sans-serif;
 }
 
 .share{
@@ -72,6 +74,15 @@ body {
     transition: all 0.3s ease;
     padding: 10px 15px;
 
+}
+#from {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    font-size: 18px;
+    font-style: italic;
+    font-family: Monserrat, sans-serif;
+    letter-spacing: 2px;
 }
 .share svg{
     width: 30px;
@@ -1708,11 +1719,11 @@ body, h1, p {
 }
 
 /* Estilos generales */
-body {
+/* body {
   font-family: 'Arial', sans-serif;
   background-color: #f7f7f7;
   color: #333;
-}
+} */
 
 .container {
   max-width: 1200px;
