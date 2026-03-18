@@ -128,7 +128,7 @@
     <div class="wizard-container">
       <!-- Paso 1: Elegir ocasión -->
       <div class="step" id="step-occasion">
-        <h2>1️⃣ Elige la ocasión</h2>
+        <h2>1️⃣ Elige la ocasión y click en siguiente</h2>
         <div class="occasion-container">
           <button class="occasion" data-type="amor">❤️ Amor</button>
           <button class="occasion" data-type="amistad">🤝 Amistad</button>
@@ -143,7 +143,7 @@
 
       <!-- Paso 2: Elegir mensaje -->
       <div class="step" id="step-message" style="display: none">
-        <h2>2️⃣ Elige o escribe tu mensaje</h2>
+        <h2>2️⃣ Elige o escribe tu mensaje y click en siguiente</h2>
         <div id="copyContainer"></div>
         <textarea
           id="customMessage"
@@ -156,13 +156,15 @@
 
       <!-- Paso 3: Nombre destinatario -->
       <div class="step" id="step-name" style="display: none">
-        <h2>3️⃣ Nombre del destinatario</h2>
+        <h2>3️⃣ Nombre de la persona especial</h2>
         <input id="nameInput" placeholder="Ej. María" />
       </div>
 
       <!-- Paso 4: Nombre remitente -->
       <div class="step" id="step-sender" style="display: none">
-        <h2>4️⃣ Tu nombre <span>*opcional</span></h2>
+        <h2>
+          4️⃣ Tu nombre <span>*Deja vacio si quieres que sea anonimo</span>
+        </h2>
         <input id="senderInput" placeholder="Ej. Juan" />
       </div>
 
@@ -170,7 +172,14 @@
       <div class="step" id="step-generate" style="display: none">
         <h2>5️⃣ Comparte tu mensaje</h2>
         <div id="result"></div>
-        <button id="shareBtn">Copiar link</button>
+        <button id="shareBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22"
+            /></svg
+          ><span>Compartir link</span>
+        </button>
         <button id="shareWhatsApp">Compartir en WhatsApp</button>
         <button id="shareCopy">Copiar link</button>
       </div>

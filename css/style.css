@@ -1,5 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap');
+@font-face {
+  font-family: 'learning-curve-regular';
+  src: url('../fonts/learning_curve_regular.otf') format('truetype');
+  display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+  display: swap;
+}
+@view-transition {
+    navigation: auto;
+}
 *,
 *::after,
 *::before {
@@ -23,7 +34,8 @@ body{
     align-items: center;
     justify-content: space-around;
     background-color: black;
-    font-family: plus-jakarta-sans, sans-serif;
+    /* font-family: plus-jakarta-sans, sans-serif; */
+    font-family: Montserrat, sans-serif;
     min-height: 100%;
 }
 header{
@@ -38,6 +50,29 @@ main{
 a{
     text-decoration: none;
 }
+
+::view-transition-old(root) {
+  animation: fade-out 1s ease forwards;
+}
+
+::view-transition-new(root) {
+  animation: fade-in 1s ease forwards;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    transform: scale(.95);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
 .img {
     width: 20em;
     height: auto;
@@ -50,13 +85,24 @@ p.text{
     text-align: center;
     margin: 20px 10px 20px 10px;
     line-height: 1.625;
+    font-family: Montserrat, sans-serif;
+    /* font-size: 28px; */
 }
 footer{
     font-size: 0.7em;
     color: #94a3b857;
 }
+.textt{
+    font-size: 0.9em;
+    color: #94a3b88d;
+}
 .italic {
     font-style: italic;
+}
+h1{
+    font-family: learning-curve-regular, cursive;
+    font-size: 3rem;
+
 }
 .bold {
     font-weight: bold;
@@ -104,11 +150,24 @@ footer{
     height: 15px;
     margin-left: 6px;
 }
-
+.lights {
+    display: none;
+}
 .btn:hover{
     background-color: var(--dark-rose);
 }
-
+.btn:hover ~ .lights {
+    display: block;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-around;
+    margin: auto;
+    height: 100%;
+    width: 900px;
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -117,8 +176,112 @@ footer{
     height: 100%;
     width: 400px;
 }
+.flower__light {
+  position: absolute;
+  bottom: 0vmin;
+  width: 1vmin;
+  height: 1vmin;
+  background-color: rgb(255, 251, 0);
+  border-radius: 50%;
+  filter: blur(0.2vmin);
+  -webkit-animation: light-ans 4s linear infinite backwards;
+  animation: light-ans 4s linear infinite backwards;
+}
+.flower__light:nth-child(odd) {
+  background-color: #23f0ff;
+}
+.flower__light--1 {
+  left: -2vmin;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.flower__light--2 {
+  left: 3vmin;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.flower__light--3 {
+  left: -6vmin;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.flower__light--4 {
+  left: 6vmin;
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+.flower__light--5 {
+  left: -1vmin;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+.flower__light--6 {
+  left: -4vmin;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.flower__light--7 {
+  left: 3vmin;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.flower__light--8 {
+  left: -6vmin;
+  -webkit-animation-delay: 3.5s;
+  animation-delay: 3.5s;
+}
+@-webkit-keyframes light-ans {
+  0% {
+    opacity: 0;
+    transform: translateY(0vmin);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-5vmin) translateX(-2vmin);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15vmin) translateX(2vmin);
+    filter: blur(0.2vmin);
+  }
+  75% {
+    transform: translateY(-20vmin) translateX(-2vmin);
+    filter: blur(0.2vmin);
+  }
+  100% {
+    transform: translateY(-30vmin);
+    opacity: 0;
+    filter: blur(1vmin);
+  }
+}
+@keyframes light-ans {
+  0% {
+    opacity: 0;
+    transform: translateY(0vmin);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-5vmin) translateX(-2vmin);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15vmin) translateX(2vmin);
+    filter: blur(0.2vmin);
+  }
+  75% {
+    transform: translateY(-20vmin) translateX(-2vmin);
+    filter: blur(0.2vmin);
+  }
+  100% {
+    transform: translateY(-30vmin);
+    opacity: 0;
+    filter: blur(1vmin);
+  }
+}
 
-
+.relative {
+    position: relative;
+}
 @media screen and (max-width:574px){
     .description{
         font-size: 2rem;

@@ -87,10 +87,10 @@ nextStepBtn.addEventListener("click",()=>{
     alert("Ingresa el nombre del destinatario");
     return;
   }
-  if(currentStep===3 && !senderInput.value.trim()){
-    alert("Ingresa tu nombre");
-    return;
-  }
+  // if(currentStep===3 && !senderInput.value.trim()){
+  //   alert("Ingresa tu nombre");
+  //   return;
+  // }
 
   document.getElementById(steps[currentStep]).style.display="none";
   currentStep++;
