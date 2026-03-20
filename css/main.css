@@ -63,6 +63,21 @@ body {
   font-family: Monserrat, sans-serif;
 }
 
+@keyframes latido {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.1); }
+  40%  { transform: scale(0.95); }
+  60%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.latido {
+  display: inline-block;
+  /* animation: latido 1s infinite; */
+  animation: latido 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
 .share{
     position: absolute;
     top: 20px;
@@ -141,7 +156,7 @@ a.share {
 
 }
 .titulo {
-  margin-bottom: 180px;
+  margin-bottom: 150px;
   font-family: Montserrat, sans-serif;
   color: white;
   position: absolute;
@@ -150,6 +165,7 @@ a.share {
   opacity: 0;
   animation: fadeIn 3s ease-in-out forwards;
   text-align: center;
+  width: 80%;
 }
 @keyframes fadeIn {
   from {
@@ -214,9 +230,12 @@ a.share {
   /* Estilos específicos para dispositivos con un ancho máximo de 600px */
 .flowers {
       font-size: 14px;
-      margin-bottom: 35%;
+      margin-bottom: 60%;
       letter-spacing: 3px;
       transform: scale(1.0);
+}
+.titulo {
+  width: 90%;
 }
 
 }

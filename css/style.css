@@ -11,6 +11,21 @@
 @view-transition {
     navigation: auto;
 }
+
+@keyframes latido {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.1); }
+  40%  { transform: scale(0.95); }
+  60%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.latido {
+  display: inline-block;
+  /* animation: latido 1s infinite; */
+  animation: latido 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
 *,
 *::after,
 *::before {
