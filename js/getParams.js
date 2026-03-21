@@ -8,6 +8,6 @@ const containerMsg = document.getElementById("msg")
 const containerFrom = document.getElementById("from")
 
 containerName ? containerName.textContent = name : null;
-containerMsg ? containerMsg.textContent = msg : null;
+containerMsg.textContent = msg || "Nadie debería quedarse sin sus flores amarillas, por eso te las envío llenas de cariño y buenos deseos para iluminar tu día.";
 containerFrom && from ? containerFrom.textContent = ("- " + from) : null;
 
